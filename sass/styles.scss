@@ -1,0 +1,837 @@
+@charset "utf-8";
+
+/* Chrome, Safari, Edge, Opera Arrows Num Input*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox Arrows Num Input */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+// VARIABLES
+// Color
+$primary: #108140;
+$dark: #6D6D6D;
+$warning: #FFFFFF;
+$white: #FFFFFF;
+
+// Typography
+$title-family: 'Montserrat', sans-serif;
+$title-size: 2.7rem;
+$title-weight: 800;
+$subtitle-family: 'Montserrat', sans-serif;
+$subtitle-weight: 600;
+
+$card-radius: 0;
+
+$card-footer-border-top: 0;
+
+$button-border-width: 5px;
+
+// Input
+$input-radius: 0;
+
+$transition: ease-in-out;
+
+.logo {
+    width: 10rem;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+
+    overflow-y: hidden;
+
+    * {
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+.button.btn {
+    border-radius: 0;
+    font-weight: 800;
+    padding: 1.2rem 1rem;
+    font-size: 1rem;
+}
+
+a#donate-btn {
+    border-radius: 0;
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// Hero
+.hero {
+
+    .column {
+        color: $dark !important;
+        cursor: pointer;
+
+        &.active {
+            color: $white !important;
+            background-color: $primary;
+        }
+    }
+
+    .column {
+        background-color: $white;
+        border: 1px solid $dark;
+        font-size: 0.8rem;
+        position: relative;
+        color: $dark;
+
+        &:hover {
+            background-color: $primary;
+            color: $white !important;
+        }
+
+        &#works.is-active {
+
+            .works {
+                max-height: 1000px;
+                visibility: visible;
+                display: block !important;
+                z-index: 100 !important;
+                a {
+                    color: $white;
+                }
+            }
+        }
+
+        &#works.is-active .works li {
+            opacity: 1;
+        }
+    }
+
+    .columns {
+        position: relative;
+    }
+
+    .works {
+        visibility: hidden;
+        max-height: 0;
+        padding: 0 1rem;
+        background-color: $primary;
+        position: absolute;
+        left: -20%;
+        top: 100%;
+        width: 140%;
+        transition: all 0.5s ease-in-out;
+        // transition: visibility 0.5s ease-in-out;
+
+        li {
+            opacity: 0;
+            transition: opacity 0.1s ease-in-out;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .columns #works {
+        .works {
+            padding-top: 1.3rem;
+        }
+    }
+
+    .hero-body {
+        .title {
+            width: 70%;
+            margin: 0 auto;
+        }
+    
+        .subtitle {
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.video-container {
+    width: 70%;
+    margin: auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+        font-size: 3rem;
+    }
+
+    &.mission {
+        height: 20rem;
+    
+        img {
+            height: 5rem;
+            text-align: center;
+        }
+    
+        .card-footer {
+            position: absolute;
+            bottom: 1.5rem;
+            padding: 1rem;
+        }
+    }
+
+    &.values {
+        height: 15rem;
+    }
+}
+
+.mission {
+    a.learn-more {
+        color: $dark;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+.let-every-child {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/images/Boy-BlackAndWhite.jpg') no-repeat;
+    background-position: center 50%;
+    background-size: cover;
+    .container {
+        padding: 5rem 2rem;
+    }
+}
+
+.column.fullheight {
+    img {
+        height: 100%;
+    }
+}
+
+.columns.gallery-component {
+    .column {
+
+        .wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            a {
+                width: 100%;
+                height: 100%;
+                display: block;
+
+                &:hover .overlay {
+                    width: 100%;
+                    height: 100%;
+                    visibility: visible;
+                    opacity: 0.9;
+                }
+            }
+        }
+
+
+        .overlay {
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba($primary, 1);
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+    }
+}
+
+body#home {
+
+    section.hero {
+        background: linear-gradient(to bottom right,rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url('../assets/images/Classroom-Wide-ChildrenHandsUp.jpg') center no-repeat;
+        background-size: cover;
+    }
+    
+    #home-involved {
+        .column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 2rem;
+    
+            &.volunteer {
+                background: linear-gradient(to bottom right,rgba(0,0,0, 0.5), rgba(0,0,0, 0.5)), url('../assets/images/Volunteer-Girl.jpg') no-repeat center;
+                background-size: cover;
+            }
+
+            &.help-children {
+                background: linear-gradient(to bottom right,rgba(0,0,0, 0.3), rgba(0,0,0, 0.3)), url('../assets/images/Children-Candid-SittingOnFloor.jpg') no-repeat center;
+                background-size: cover;
+            }
+        }
+    
+        .involved-icon {
+            font-size: 4rem;
+        }
+    }
+
+}
+
+body#about {
+
+    section.hero {
+        background: linear-gradient(to bottom right,rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url('../assets/images/Girl-Boy-Candid-Sitting.jpg') center no-repeat;
+        background-size: cover;
+    }
+
+    section.our-story {
+        position: relative;
+    }
+    hr {
+        border:none;
+        border-top:0.2rem dashed $dark;
+        color:#fff;
+        background-color:#fff;
+        height:1rem;
+        width:100%;
+        padding: 0;
+        margin: 0;
+        z-index: -1;
+        position: absolute;
+        top: 30%;
+        left: 0;
+    }
+
+    .fullscreen-image {
+        background: url('../assets/images/about-quote-yeladim.jpg') center no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 40rem;
+
+        &.team {
+            background: url('../assets/images/team/meet-the-team.jpg') center no-repeat;
+            background-size: cover;
+        }
+    }
+}
+
+body#gallery {
+    section.hero {
+        background: linear-gradient(to bottom right,rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url('../assets/images/gallery-hero.jpg') center no-repeat;
+        background-size: cover;
+    }
+}
+
+body#evbs {
+    section.hero {
+        background: linear-gradient(to bottom right,rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url('../assets/images/evbs-hero.jpg') top no-repeat;
+        background-size: cover;
+    }
+
+    section.ms {
+        .column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+body#educational-assistance {
+    section.hero {
+        background: linear-gradient(to bottom right,rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url('../assets/images/educational-assistance.jpg') top no-repeat;
+        background-size: cover;
+    }
+}
+
+body#teachers-training {
+    section.hero {
+        background: linear-gradient(to bottom right,rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url('../assets/images/teachers-training.jpg') center no-repeat;
+        background-size: cover;
+    }
+}
+
+body#volunteers-training {
+    section.hero {
+        background: linear-gradient(to bottom right,rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url('../assets/images/volunteers-program.jpg') center no-repeat;
+        background-size: cover;
+    }
+
+    section.get-involved {
+        .column {
+            &.events .container, &.fundraising .container, &.campaign .container {
+                height: 20rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &.events .container {
+                background: linear-gradient(to bottom right,rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url('../assets/images/volunteer-events.jpg') center no-repeat;
+                background-size: cover;
+            }
+
+            &.fundraising .container {
+                background: linear-gradient(to bottom right,rgba(0,0,0, 0.3), rgba(0,0,0, 0.3)), url('../assets/images/volunteer-fundraising.jpg') center no-repeat;
+                background-size: cover;
+            }
+
+            &.campaign .container {
+                background: linear-gradient(to bottom right,rgba(0,0,0, 0.4), rgba(0,0,0, 0.4)), url('../assets/images/volunteer-campaign.jpg') center no-repeat;
+                background-size: cover;
+            }
+
+        }
+    }
+}
+
+footer {
+    a {
+        color: $white;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    .quick-links {
+        li {
+            height: 2.2rem;
+        }
+    }
+
+    .contact-us {
+        li {
+            height: 2.2rem;
+        }
+    }
+
+    .connect {
+        letter-spacing: 0.4rem;
+    }
+}
+
+body#get-involved {
+    section.hero {
+        background: linear-gradient(to bottom right,rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url('../assets/images/donation-form-hero.jpg') top no-repeat;
+        background-size: cover;
+    }
+
+    .donate-icon{
+        font-size: 1.6rem;
+    }
+}
+
+body#contact-us {
+    section.hero {
+        background: linear-gradient(to bottom right,rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url('../assets/images/contact-us.JPG') top no-repeat;
+        background-size: cover;
+    }
+}
+
+body#volunteers-form {
+    section.hero {
+        background: linear-gradient(to bottom right,rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url('../assets/images/make-a-difference.jpg') center no-repeat;
+        background-size: cover;
+    }
+
+    .committee {
+        .column .field {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            label {
+                width: 80%;
+            }
+
+            .check-icon {
+                position: relative;
+                left: 0rem;
+                top: 1.5rem;
+            }
+        }
+    }
+}
+
+// Form
+.form {
+    input.input, .textarea, .select select {
+        border: 2px solid $dark !important;
+    }
+    
+    .select select {
+        border-right: 0px !important;
+        text-overflow: ellipsis;
+        padding-right: 0;
+
+        option {
+            text-overflow: ellipsis;
+        }
+    }
+
+    .original-radio {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .original {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .text {
+                padding-left: 0.5rem;
+                padding-right: 1.2rem;
+            }
+        }
+    }
+
+    .check-icon {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        border: solid 2px #e3e3e3;
+        border-radius: 50%;
+        transition: $transition;
+        position: relative;
+        left: 0rem;
+        bottom: 50%;
+      
+        &:before {
+            font-family: "Font Awesome\ 5 Free";
+            font-weight: 900;
+            content: '\f00c';
+            font-size: 0.7rem;
+            text-align: center;
+            vertical-align: middle;
+            color: #FFF;
+            position: absolute;
+            inset: 0;
+            background-repeat: no-repeat;
+            background-size: 12px;
+            background-position: center center;
+            transform: scale(1.6);
+            transition: $transition;
+            opacity: 0;
+        }
+    }
+    
+    .checkbox {
+        .card.form {
+            height: 16rem;
+            justify-content: unset;
+    
+            &.plan {
+                height: 8rem;
+            }
+    
+            .content-image {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+    
+                &.plan {
+                    width: 11rem;
+                }
+        
+                .brand-icon {
+                    width: 35%;
+    
+                    &.bpi {
+                        width: 50%;
+                    }
+                }
+            }
+
+            .check-icon {
+                position: relative;
+                left: 0rem;
+                top: 1rem;
+            }
+    
+            .content-text {
+                position: absolute;
+                bottom: 1rem;
+                left: 0rem;
+                width: 100%;
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: top;
+                justify-content: flex-start;
+    
+                &.plan {
+                    position: absolute;
+                    top: 50%;
+                }
+            }
+        }
+    }
+    
+    input[type='checkbox'], input[type='radio'] {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        display: none;
+        &:checked {
+            + .content-wrapper {
+                box-shadow: 0 2px 4px 0 rgba(219, 215, 215, 0.5), 0 0 0 2px $primary;
+      
+                .check-icon {
+                    background: $primary;
+                    border-color: $primary;
+                    transform: scale(1.2);
+                    &:before {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+      
+        &:focus {
+            + .content-wrapper {
+                .check-icon {
+                    box-shadow: 0 0 0 4px rgba($primary, 0.2);
+                    border-color: $primary;
+                }
+            }
+        }
+    }
+}
+
+body#events {
+    section.hero {
+        background: linear-gradient(to bottom right,rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url('../assets/images/events-hero.jpg') center no-repeat;
+        background-size: cover;
+    }
+
+    .wrapper {
+        position: relative;
+
+        .caption {
+            position: absolute;
+            left: 0.5rem;
+            bottom: 0.7rem;
+        }
+    }
+
+    .column.is-one-third-tablet {
+        height: 25rem;
+    }
+
+    section.events-grid {
+        img {
+            object-fit:cover;
+        }
+    }
+}
+
+body#sample-event {
+    section.hero {
+        background: linear-gradient(to bottom right,rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url('../assets/images/events-hero.jpg') center no-repeat;
+        background-size: cover;
+    }
+
+    .fullscreen-image {
+        background: url('../assets/images/about-quote-yeladim.jpg') center no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 40rem;
+    }
+}
+
+
+body#get-involved-page {
+
+    section.hero {
+        background: linear-gradient(to bottom right,rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url('../assets/images/get-involved-hero.jpg') top no-repeat;
+        background-size: cover;
+    }
+
+    #eventsButton {
+        width: 50%;
+    }
+
+    .columns {
+        padding-bottom: 2rem;
+
+        &.reverse {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+@import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/animate.css/animate.min.css";
+@import "../node_modules/aos/dist/aos.css";
+
+@media screen and (max-width: $tablet) {
+
+    nav {
+        margin: auto 1.3rem;
+    }
+
+    .columns.navigation {
+        transform: scaleY(0);    
+        transform-origin: top;
+        transition: all 0.5s ease-in-out;
+        max-height: 0;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+
+        &.is-active {
+            transform: scaleY(1);
+            max-height: 1000px;
+            opacity: 1;
+        }
+    }
+
+    // Burger Menu
+    a#burgerMenu {
+        position:relative;
+        display:none;
+        height: 12px;
+        width: 20px;
+        z-index: 9;
+
+        .line {
+            display:block;
+            background: $dark;
+            width:22px;
+            height:2px;
+            position:absolute;
+            left:0;
+            transition: all 0.4s;
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+
+            &:nth-child(1) {
+                top: 0;
+            }
+            &:nth-child(2) {
+                top: 50%;
+            }
+            &:nth-child(3) {
+                top: 100%;
+            }
+
+            &.white {
+                background: $white;
+            }
+        }
+
+
+        &.active {
+            .line {
+                &:nth-child(1) {
+                transform: translateY(6px) translateX(0) rotate(45deg);
+                -webkit-transform: translateY(6px) translateX(0) rotate(45deg);
+                -moz-transform: translateY(6px) translateX(0) rotate(45deg);
+                }
+                &:nth-child(2) {
+                opacity:0;
+                }
+                &:nth-child(3) {
+                transform: translateY(6px * -1) translateX(0) rotate(45deg * -1);
+                -webkit-transform: translateY(6px * -1) translateX(0) rotate(45deg * -1);
+                -moz-transform: translateY(6px * -1) translateX(0) rotate(45deg * -1);
+                }
+            }
+
+        }
+    }
+
+    .hero {
+        .works {
+            position: unset;
+            width: 100%;
+        }
+
+        .columns #works {
+            
+            .works {
+                padding-top: 0;
+            }
+
+            &.is-active {
+                .works {
+                    padding-top: 1.3rem;
+                }
+            }
+        }
+
+        .hero-body {
+            .title {
+                width: 90%;
+                margin: 0 auto;
+            }
+        
+            .subtitle {
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .donatebtn-wrapper {
+        display: none;
+    }
+
+    a#burgerMenu {
+        display: block;
+    }
+
+    footer {
+        .container {
+            .columns {
+                padding: 2.6rem 2rem;
+            }
+        }
+    }
+
+    body#events {
+        .column.is-one-third-tablet {
+            height: unset;
+        }
+    }
+
+    body#get-involved-page {
+        #eventsButton {
+            width: unset;
+        }
+    }
+}

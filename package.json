@@ -1,0 +1,31 @@
+{
+  "name": "yeladim",
+  "version": "1.0.0",
+  "description": "Website for Yeladim Inc",
+  "main": "sass/styles.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css-build": "node-sass --omit-source-map-url sass/styles.scss css/styles.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AT-Dulnuan/yeladiminc.git"
+  },
+  "author": "Abigail Dulnuan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AT-Dulnuan/yeladiminc/issues"
+  },
+  "homepage": "https://github.com/AT-Dulnuan/yeladiminc#readme",
+  "devDependencies": {
+    "animate.css": "^4.1.1",
+    "aos": "^3.0.0-beta.6",
+    "bulma": "^0.9.3",
+    "node-sass": "^7.0.1"
+  },
+  "dependencies": {
+    "fslightbox": "^3.3.1"
+  }
+}
