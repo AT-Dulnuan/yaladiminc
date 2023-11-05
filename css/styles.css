@@ -404,7 +404,7 @@ body#volunteers-form .committee .column .field {
     border-color: #108140; }
 
 body#events section.hero {
-  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../assets/images/events-hero.jpg") center no-repeat;
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../assets/images/events/2023/aug-21/hero.jpg") center no-repeat;
   background-size: cover; }
 
 body#events .wrapper {
@@ -420,15 +420,29 @@ body#events .column.is-one-third-tablet {
 body#events section.events-grid img {
   object-fit: cover; }
 
-body#sample-event section.hero {
-  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../assets/images/events-hero.jpg") center no-repeat;
+body#yvbs-grad-aug2023 section.hero {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../assets/images/events/2023/aug-21/hero.jpg") center no-repeat;
   background-size: cover; }
 
-body#sample-event .fullscreen-image {
-  background: url("../assets/images/about-quote-yeladim.jpg") center no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 40rem; }
+body#teachers-training-aug2023 section.hero {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../assets/images/events/2023/aug-5/hero.jpg") center no-repeat;
+  background-size: cover; }
+
+body#pedal-up-apr2023 section.hero {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../assets/images/events/2023/april-21/hero.jpg") center no-repeat;
+  background-size: cover; }
+
+body#honoring-march2023 section.hero {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../assets/images/events/2023/march/hero.jpg") top no-repeat;
+  background-size: cover; }
+
+body#workbook-testing-sep2022 section.hero {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../assets/images/events/2022/september/hero.jpg") top no-repeat;
+  background-size: cover; }
+
+body#teaching-demo-july2022 section.hero {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../assets/images/events/2022/july/hero.jpg") center no-repeat;
+  background-size: cover; }
 
 body#get-involved-page section.hero {
   background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../assets/images/get-involved-hero.jpg") top no-repeat;
