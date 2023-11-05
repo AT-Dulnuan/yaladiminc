@@ -14,3 +14,13 @@ $("#burgerMenu").on("click", function () {
 $("#works").on("click", function(){
     $(this).toggleClass("is-active")
 })
+
+new Splide( '.splide', {
+    type: 'loop',
+    perPage: 3,
+    breakpoints: {
+		640: {
+			perPage: 1,
+		},
+  }
+} ).mount();
